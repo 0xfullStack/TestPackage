@@ -13,6 +13,9 @@
 		191FFA3028563702008D51C2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 191FFA2E28563702008D51C2 /* Main.storyboard */; };
 		191FFA3228563702008D51C2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 191FFA3128563702008D51C2 /* Assets.xcassets */; };
 		191FFA3528563702008D51C2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 191FFA3328563702008D51C2 /* LaunchScreen.storyboard */; };
+		19D3FC8C285B571200D22A35 /* CryptoCompare in Frameworks */ = {isa = PBXBuildFile; productRef = 19D3FC8B285B571200D22A35 /* CryptoCompare */; };
+		19D3FC8F285B581100D22A35 /* Cryptoless in Frameworks */ = {isa = PBXBuildFile; productRef = 19D3FC8E285B581100D22A35 /* Cryptoless */; };
+		19D3FC93285B59E300D22A35 /* Zerion in Frameworks */ = {isa = PBXBuildFile; productRef = 19D3FC92285B59E300D22A35 /* Zerion */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +34,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19D3FC8F285B581100D22A35 /* Cryptoless in Frameworks */,
+				19D3FC8C285B571200D22A35 /* CryptoCompare in Frameworks */,
+				19D3FC93285B59E300D22A35 /* Zerion in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +89,11 @@
 			dependencies = (
 			);
 			name = TestPackage;
+			packageProductDependencies = (
+				19D3FC8B285B571200D22A35 /* CryptoCompare */,
+				19D3FC8E285B581100D22A35 /* Cryptoless */,
+				19D3FC92285B59E300D22A35 /* Zerion */,
+			);
 			productName = TestPackage;
 			productReference = 191FFA2528563702008D51C2 /* TestPackage.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +122,11 @@
 				Base,
 			);
 			mainGroup = 191FFA1C28563702008D51C2;
+			packageReferences = (
+				19D3FC8A285B571200D22A35 /* XCRemoteSwiftPackageReference "CryptoCompare" */,
+				19D3FC8D285B581100D22A35 /* XCRemoteSwiftPackageReference "Cryptoless" */,
+				19D3FC91285B59E300D22A35 /* XCRemoteSwiftPackageReference "Zerion" */,
+			);
 			productRefGroup = 191FFA2628563702008D51C2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -358,6 +374,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		19D3FC8A285B571200D22A35 /* XCRemoteSwiftPackageReference "CryptoCompare" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Modularize-Packages/CryptoCompare.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		19D3FC8D285B581100D22A35 /* XCRemoteSwiftPackageReference "Cryptoless" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Modularize-Packages/Cryptoless.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		19D3FC91285B59E300D22A35 /* XCRemoteSwiftPackageReference "Zerion" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Modularize-Packages/Zerion.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		19D3FC8B285B571200D22A35 /* CryptoCompare */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 19D3FC8A285B571200D22A35 /* XCRemoteSwiftPackageReference "CryptoCompare" */;
+			productName = CryptoCompare;
+		};
+		19D3FC8E285B581100D22A35 /* Cryptoless */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 19D3FC8D285B581100D22A35 /* XCRemoteSwiftPackageReference "Cryptoless" */;
+			productName = Cryptoless;
+		};
+		19D3FC92285B59E300D22A35 /* Zerion */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 19D3FC91285B59E300D22A35 /* XCRemoteSwiftPackageReference "Zerion" */;
+			productName = Zerion;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 191FFA1D28563702008D51C2 /* Project object */;
 }

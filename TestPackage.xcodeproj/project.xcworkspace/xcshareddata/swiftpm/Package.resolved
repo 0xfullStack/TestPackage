@@ -1,0 +1,175 @@
+{
+  "pins" : [
+    {
+      "identity" : "alamofire",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Alamofire/Alamofire.git",
+      "state" : {
+        "revision" : "354dda32d89fc8cd4f5c46487f64957d355f53d8",
+        "version" : "5.6.1"
+      }
+    },
+    {
+      "identity" : "base58",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pengpengliu/Base58.git",
+      "state" : {
+        "revision" : "8f69c52c585733f0aa4c342a86beecdd7606fd82",
+        "version" : "1.0.0"
+      }
+    },
+    {
+      "identity" : "bip32",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pengpengliu/BIP32",
+      "state" : {
+        "branch" : "master",
+        "revision" : "6cc7f365e597a6ac5318e938972cbccf45627878"
+      }
+    },
+    {
+      "identity" : "bip39",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pengpengliu/BIP39",
+      "state" : {
+        "branch" : "master",
+        "revision" : "e79bd90275e50643cf8f97208ffa536d0def3ec7"
+      }
+    },
+    {
+      "identity" : "crypto101",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/pengpengliu/Crypto101.git",
+      "state" : {
+        "revision" : "e98df5f5548ff6d8871fbd9dfc8d55cf5331b916",
+        "version" : "0.4.0"
+      }
+    },
+    {
+      "identity" : "cryptocompare",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Modularize-Packages/CryptoCompare.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "3d3abb733b443899e875054f62b6576062c10e1c"
+      }
+    },
+    {
+      "identity" : "cryptoless",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Modularize-Packages/Cryptoless.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "a681b7afe41924819d810941b38c144eaf33a834"
+      }
+    },
+    {
+      "identity" : "cryptoswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/krzyzanowskim/CryptoSwift",
+      "state" : {
+        "revision" : "12f2389aca4a07e0dd54c86ec23d0721ed88b8db",
+        "version" : "1.4.3"
+      }
+    },
+    {
+      "identity" : "moya",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Moya/Moya.git",
+      "state" : {
+        "revision" : "9b906860e3c3c09032879465c471e6375829593f",
+        "version" : "15.0.0"
+      }
+    },
+    {
+      "identity" : "reachability",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Modularize-Packages/Reachability.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "68d0c10f5e4d7cd76585868b50ced10e37cfdfaf"
+      }
+    },
+    {
+      "identity" : "reactiveswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ReactiveCocoa/ReactiveSwift.git",
+      "state" : {
+        "revision" : "c43bae3dac73fdd3cb906bd5a1914686ca71ed3c",
+        "version" : "6.7.0"
+      }
+    },
+    {
+      "identity" : "reactivex",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Modularize-Packages/ReactiveX.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "b641c853aadbc12e525a3d25715f7f5667287342"
+      }
+    },
+    {
+      "identity" : "rxswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ReactiveX/RxSwift.git",
+      "state" : {
+        "revision" : "b4307ba0b6425c0ba4178e138799946c3da594f8",
+        "version" : "6.5.0"
+      }
+    },
+    {
+      "identity" : "secp256k1.swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Boilertalk/secp256k1.swift.git",
+      "state" : {
+        "revision" : "45e458ec3be46cf0a6eb68bc947f797852dc65d8",
+        "version" : "0.1.6"
+      }
+    },
+    {
+      "identity" : "serialization",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Modularize-Packages/Serialization.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "98b42949bcc5fe4bb73c140d77159d5e4ac9af06"
+      }
+    },
+    {
+      "identity" : "signer",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Modularize-Packages/Signer.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "b4eb78f83c2b3871162466f40292f9d0ed4cb458"
+      }
+    },
+    {
+      "identity" : "socket.io-client-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/socketio/socket.io-client-swift",
+      "state" : {
+        "revision" : "a1ed825835a2d8c2555938e96557ccc05e4bebf3"
+      }
+    },
+    {
+      "identity" : "starscream",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/daltoniam/Starscream",
+      "state" : {
+        "revision" : "df8d82047f6654d8e4b655d1b1525c64e1059d21",
+        "version" : "4.0.4"
+      }
+    },
+    {
+      "identity" : "zerion",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Modularize-Packages/Zerion.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "1f5d047d6bc6b84f079ccec28f921ae37eb580c6"
+      }
+    }
+  ],
+  "version" : 2
+}
