@@ -34,6 +34,64 @@ class ViewController: UIViewController {
         .disposed(by: bag)
     }
     
+    public func testRegister() async throws {
+        let signer: Signer = HDWallet()
+        let ownerKeyPair = signer.deriveOwnerKeyPair()
+        let ownerPublicKey = ownerKeyPair.public
+        
+//        while registration?.status != "registered" {
+//            registration = try await cls!.register(ownerPublicKey: ownerPublicKey.toHexString())
+//            if registration?.status != "registered" { sleep(2) } // matic block time
+//        }
+        
+        register(ownerPublicKey: ownerPublicKey.toHexString())
+    }
+    
+    private var registerBag = DisposeBag()
+    private func register(ownerPublicKey: String) {
+        registerBag = DisposeBag()
+        Cryptoless
+            .register(ownerPublicKey: ownerPublicKey)
+            .subscribe { [weak self] registration in
+                guard let self = self else { return }
+                if registration.status != "registered" {
+                    sleep(2)
+                    self.register(ownerPublicKey: ownerPublicKey)
+                }
+            } onError: { [weak self] error in
+                guard let self = self else { return }
+                sleep(2)
+                self.register(ownerPublicKey: ownerPublicKey)
+            }
+            .disposed(by: registerBag)
+    }
+    
+    public func testFetchginAccounts() -> Observable<[Cryptoless.Account]> {
+        let signer: Signer = HDWallet()
+        let networks = [Cryptoless.Network]()
+        
+        let publicKeys = networks.map { signer.deriveKeyPair(path: $0.derivationPath, index: .zero).public.toHexString() }
+        return cryptoless
+            .fetchAccounts(publicKeys: publicKeys)
+            .flatMapLatest { [weak self] fetchedAccounts -> Observable<[Cryptoless.Account]> in
+                guard let self = self else { return .never() }
+
+                let result: [Observable<Cryptoless.Account>] = networks.compactMap({ network in
+                    guard fetchedAccounts.filter({ $0.networkCode == network.code }).isEmpty else {
+                        return nil
+                    }
+                    let publicKey = signer.deriveKeyPair(path: network.derivationPath, index: .zero).public.toHexString()
+                    let deployAccount = self.cryptoless.deployAccount(networkCode: network.code, publicKeys: [publicKey], threshold: 1)
+                    return deployAccount
+                })
+                return Observable
+                    .concat(result)
+                    .toArray()
+                    .map({ $0 + fetchedAccounts })
+                    .asObservable()
+            }
+    }
+    
     private func testTx() {
         let networkId = "eth"
         let coinId = "eth"
@@ -50,7 +108,7 @@ class ViewController: UIViewController {
                 to: "0xADB6e54257207d6B5df204Aa4038C4B64B9586f1",
                 amount: "0.001"
             )
-            .flatMapLatest({ [weak self] transfer -> Observable<Transaction> in
+            .flatMapLatest({ [weak self] transfer -> Observable<Cryptoless.Transaction> in
                 guard let self = self else { return .never() }
                 print("=================================================================")
                 print("1. Make Transfer: \(transfer)")
@@ -59,14 +117,14 @@ class ViewController: UIViewController {
                 let tx = transfer._embedded!.transactions.first!
                 let signing = tx.requiredSignings!.first!
                 let sig = try! key.sign([UInt8](hex: signing.hash))
-                let signatures = Transaction.Signature(
+                let signatures = Cryptoless.Transaction.Signature(
                     hash: signing.hash,
                     publicKey: signing.publicKeys.first!,
                     signature: sig.toHexString()
                 )
                 return self.cryptoless.signTransaction(id: tx.id, signatures: [signatures])
             })
-            .flatMapLatest({ [weak self] transaction -> Observable<Transaction> in
+            .flatMapLatest({ [weak self] transaction -> Observable<Cryptoless.Transaction> in
                 guard let self = self else { return .never() }
                 print("=================================================================")
                 print("2. SignTransaction: \(transaction)")
@@ -83,8 +141,8 @@ class ViewController: UIViewController {
     
     private func testCryptoless() {
         cryptoless
-            .on(.holder)
-            .mapObject([Holder].self)
+            .subscribe(.holder)
+            .mapObject([Cryptoless.Holder].self)
             .subscribe(onNext: { [weak self] holders in
                 print(holders)
                 print("=================================================================")
@@ -95,8 +153,8 @@ class ViewController: UIViewController {
             .disposed(by: bag)
         
         cryptoless
-            .on(.instruction)
-            .mapObject([Instruction].self)
+            .subscribe(.instruction)
+            .mapObject([Cryptoless.Instruction].self)
             .subscribe(onNext: { [weak self] instructions in
                 print("=================================================================")
                 print("Instructions: \(instructions)")
@@ -113,9 +171,9 @@ class ViewController: UIViewController {
 
         CryptoCompare
             .shared
-            .on(.market(syms: syms))
+            .subscribe(.market(syms: syms))
             .subscribe { [weak self] data in
-                if let market = try? JSONDecoder().decode(Market.self, from: data) {
+                if let market = try? JSONDecoder().decode(CryptoCompare.Market.self, from: data) {
                     
                     self?.price.text = "\(market.price)"
                     print(market)

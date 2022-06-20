@@ -51,7 +51,7 @@
       "location" : "https://github.com/Modularize-Packages/CryptoCompare.git",
       "state" : {
         "branch" : "main",
-        "revision" : "3d3abb733b443899e875054f62b6576062c10e1c"
+        "revision" : "2065d9ae6526de89aca3ebcc231cd8f76813ff73"
       }
     },
     {
@@ -60,7 +60,7 @@
       "location" : "https://github.com/Modularize-Packages/Cryptoless.git",
       "state" : {
         "branch" : "main",
-        "revision" : "a681b7afe41924819d810941b38c144eaf33a834"
+        "revision" : "4b45341ab0f4ab258643910c4fa489007c87ea93"
       }
     },
     {
@@ -105,7 +105,7 @@
       "location" : "https://github.com/Modularize-Packages/ReactiveX.git",
       "state" : {
         "branch" : "main",
-        "revision" : "b641c853aadbc12e525a3d25715f7f5667287342"
+        "revision" : "6548861dd8200cd3876c0907faa338a4d926cd9b"
       }
     },
     {
@@ -132,7 +132,7 @@
       "location" : "https://github.com/Modularize-Packages/Serialization.git",
       "state" : {
         "branch" : "main",
-        "revision" : "98b42949bcc5fe4bb73c140d77159d5e4ac9af06"
+        "revision" : "2c86847102b1cc5f1c87c7a5bfbf557ee80ceb69"
       }
     },
     {
@@ -141,7 +141,7 @@
       "location" : "https://github.com/Modularize-Packages/Signer.git",
       "state" : {
         "branch" : "main",
-        "revision" : "b4eb78f83c2b3871162466f40292f9d0ed4cb458"
+        "revision" : "222e53ed6678d6fbf56189304541026b83bf6a5a"
       }
     },
     {
@@ -167,7 +167,7 @@
       "location" : "https://github.com/Modularize-Packages/Zerion.git",
       "state" : {
         "branch" : "main",
-        "revision" : "1f5d047d6bc6b84f079ccec28f921ae37eb580c6"
+        "revision" : "29bf90b41e0a30f6c01c295c2d395f1202d26e91"
       }
     }
   ],
